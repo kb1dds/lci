@@ -45,91 +45,26 @@ http://groups.google.com/group/lci-general.  To report a bug, go to
 http://github.com/justinmeza/lci/issues.
 
 Created and maintained by Justin J. Meza <justin.meza@gmail.com>.
+Ported to VAX by Michael Robinson <kb1dds@gmail.com>
 
 # PREREQUISITES
 
-1. You must have CMake installed (www.cmake.org). 
-  a) If you're using a Linux distro with package managment CMake should be in 
-    your repositories.
+1. You must have a VAX running a recent version of OpenVMS.  I am using OpenVMS VAX 7.2.  SIMH should be fine if you don't have an actual VAX, but then I'm not sure why you are doing this...
 
-2. Python 2.7+ or Python 2.x with the argparse module installed.
+2. The VAX C compiler
 
-# INSTALLATION: THE EASY WAY ON LINUX OR MAC OSX
+# INSTALLATION: THERE IS NO EASY WAY ON OPENVMS VAX
 
-1. run the script install.py. Note that
+1. Compile all of the C files
 
-  $ ./install.py -h
-
-  will display a list of relavent install options. For
-  example, if I wanted to install lci to the directory
-  "/home/kurtis/opt" I would run:
-
-  $ ./install.py --prefix="/home/kurtis/opt"
+  $ CC MAIN.C
   
+  etc.  Hopefully you can then
 
-# INSTALLATION: THE MORE INVOLVED WAY ON LINUX OR MAC OSX
-
-1. Configure lci using CMake. This can be as simple as opening up the terminal, 
-  navigating to the directory containing lci and typing:
-
-  $ cmake .
-
-  You can also provide any other argument to the CMake configuration process
-  you'd like. To enable Memory testing turn the PERFORM_MEM_TESTS option on
-  like so:
-
-  $ cmake -DPERFORM_MEM_TESTS:BOOL=ON .
-
-  You can also use the "ccmake" command or the CMake GUI if you prefer.
-  See the cmake documentation for more details.
-
-2. Build the project:
-
-  $ make
-
-3. Install
-   
-  $ make install
-
-4. (Optional) Build documentation:
-
-  $ make docs
-
-5. (Optional) Run tests:
-
-  $ ctest
-
-# INSTALLATION ON WINDOWS
-
-(Note that the instructions were written from the point of view of Windows 7,
-but in practice, any modern version will work.)
-
-1. Add MinGW and Python to your PATH.
-
-  - Start > right-click Computer > Properties > Advanced system settings
-    > Environment Variables....
-    
-  - Select the "PATH" variable and click "Edit...".
+  $ LINK MAIN, ERROR, INTERP, LEXER, PARSER, TOKEN, UNICOD
   
-  - Add ";C:\MinGW\bin;C:\Python32" to the end.
-  
-3. Open an Administrator shell
+  but I wouldn't yet bet on it.
 
-  - Start > All Programs > Accessories > right-click Command Prompt
-    > Run as administrator.
- 
-4. Navigate to the project directory using the "cd" command, for example,
+# INSTALLATION: ANOTHER OS
 
-  > cd C:\Users\%user%\Documents\lci
- 
-5. run the script install.py. Note that
-
-  > install.py -h
-
-  will display a list of relavent install options. For
-  example, if I wanted to install lci to the directory
-  "C:\Program Files\lci" I would run:
-
-  > install.py --prefix="C:/Program Files/lci"
-  
-  (notice that forward slashes are used to separate directories.)
+Use the original repo, not this fork...
