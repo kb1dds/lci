@@ -15,13 +15,6 @@
 #ifndef __LEXER_H__
 #define __LEXER_H__
 
-#include <stdlib.h>
-#include <stdio.h>
-#include <string.h>
-#include <ctype.h>
-
-#include "error.h"
-
 #undef DEBUG
 
 /**

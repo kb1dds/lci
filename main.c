@@ -109,11 +109,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <getopt.h>
+#include <stdarg.h>
+#include <string.h>
 
 #include "lexer.h"
-#include "tokenizer.h"
+#include "token.h"
 #include "parser.h"
-#include "interpreter.h"
+#include "interp.h"
 #include "error.h"
 
 #define READSIZE 512

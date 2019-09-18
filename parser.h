@@ -202,14 +202,6 @@
 #ifndef __PARSER_H__
 #define __PARSER_H__
 
-#include <stdlib.h>
-#include <stdio.h>
-#include <string.h>
-#include <math.h>
-#include <float.h>
-
-#include "tokenizer.h"
-
 #undef DEBUG
 
 /**

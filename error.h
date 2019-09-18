@@ -11,9 +11,6 @@
 #ifndef __ERROR_H__
 #define __ERROR_H__
 
-#include <stdlib.h>
-#include <stdio.h>
-#include <stdarg.h>
 
 /**
  * Represents an error type.  The error types are organized based on which

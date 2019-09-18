@@ -1,3 +1,12 @@
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <float.h>
+
+#include "lexer.h"
+#include "error.h"
+#include "token.h"
 #include "parser.h"
 
 #ifdef DEBUG
